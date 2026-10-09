@@ -87,8 +87,9 @@ Bir `BlogPost` içerik öğesi `Summary` görünümünde render edilirken `Conte
 yaklaşık şu alternatifler denenir (en spesifik olan önce kazanır):
 
 ```
-Content__BlogPost__Summary   →  Content-BlogPost.Summary.cshtml
-Content__Summary__42         →  (belirli bir içerik id'si için)
+Content_Summary__42          →  Content-42.Summary.cshtml   (belirli bir içerik id'si için)
+Content__42                  →  Content-42.cshtml
+Content_Summary__BlogPost    →  Content-BlogPost.Summary.cshtml
 Content__BlogPost            →  Content-BlogPost.cshtml
 Content_Summary              →  Content.Summary.cshtml
 Content                      →  Content.cshtml
@@ -97,6 +98,7 @@ Content                      →  Content.cshtml
 Dosya adı dönüşümü:
 - `__` (çift alt çizgi) → `-` (tire)
 - `_` (tek alt çizgi) → `.` (nokta)
+- Display type her zaman dosya adının sonuna taşınır: `Content_Summary__BlogPost` → `Content-BlogPost.Summary`
 
 Kod ile alternate eklemek:
 
